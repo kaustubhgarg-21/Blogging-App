@@ -1,1 +1,21 @@
-<p>login works!</p>
+
+<div class="col-sm-6">
+    <h1 style="text-align: center;">Login</h1>
+<form [formGroup]="loginForm" (ngSubmit)="collectData()">
+
+  <label for="name">Username</label>
+  <input ngClass="" formControlName="name" type="text" class="form-control" name="name">
+  <span class="error" *ngIf="name?.invalid && name?.touched">Name is invalid</span>
+  <br>
+  <label for="exampleInputPassword1" class="form-label">Password</label>
+  <input formControlName="password" type="password" class="form-control" name="password"><br>
+  <span class="error" *ngIf="password?.invalid && password?.touched">Password is invalid</span>
+    <br><br>
+    <div>
+        <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Submit</button>
+        <button routerLink='/signup' class="btn btn-primary">new user</button>
+    </div>
+</form>
+</div>
+
+

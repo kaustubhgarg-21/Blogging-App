@@ -1,0 +1,26 @@
+*{
+    margin: auto;
+}
+
+h1{
+    color: red;
+}
+
+/* input.ng-invalid{
+    border-left: 3px solid red;
+} */
+
+input.ng-valid{
+    border-left: 3px solid green;
+}
+
+.error{
+    color: red;
+}
+#signup{
+    margin-left: 10px;
+}
+button{
+    
+    margin: 10px;
+}

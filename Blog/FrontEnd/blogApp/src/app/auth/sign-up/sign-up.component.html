@@ -1,1 +1,35 @@
 <p>sign-up works!</p>
+
+<div class="col-sm-6">
+    <form [formGroup]="loginForm" (ngSubmit)="collectData()">
+    
+      <label for="name">Name</label>
+      <input ngClass="" formControlName="name" type="text" class="form-control" name="name">
+      <!-- <span class="error" *ngIf="loginFormControls?.invalid">Name is invalid</span> -->
+      <span class="text-danger" *ngIf="name?.invalid && name?.touched">name is required</span>
+      <br><br>
+    
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input formControlName="email" type="email" class="form-control" name="email" aria-describedby="emailHelp">
+      <span class="error" *ngIf="email?.invalid && email?.touched">Email is invalid</span>
+        <br><br>
+      
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input formControlName="password" type="password" class="form-control" name="password"><br>
+      <span class="error" *ngIf="password?.invalid && password?.touched">Password is invalid</span>
+        <br><br>
+      <label for="Mobile">Mobile</label>
+      <input formControlName="mobile" type="text" class="form-control" name="mobile" placeholder="+91"><br>
+      <span class="error" *ngIf="mobile?.invalid && mobile?.touched">Mobile is invalid</span>
+      <br><br>
+    
+         
+      <label for="inputAddress">Address</label>
+      <input formControlName="address" type="text" class="form-control" name="address" placeholder="1234 Main St"><br>
+      <span class="error" *ngIf="address?.invalid && address ?.touched">Address is invalid</span>
+      <br>
+    
+      <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Submit</button>
+      <button routerLink='/login' type="submit"  class="btn btn-primary">Login</button>
+    </form>
+    </div>
